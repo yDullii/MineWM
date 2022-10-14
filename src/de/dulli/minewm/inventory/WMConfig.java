@@ -22,7 +22,7 @@ public class WMConfig implements Listener {
 	public void onInvClick(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
 
-		if(e.getCurrentItem() == null) {
+		if(e.getCurrentItem() == null || e.getCurrentItem().getItemMeta() == null) {
 			return;
 		}
 		

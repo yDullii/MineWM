@@ -2,6 +2,7 @@ package de.dulli.minewm;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.dulli.minewm.mysql.MySQL;
 import de.dulli.minewm.register.BukkitRegister;
 import de.dulli.minewm.utils.CustomConfig;
 
@@ -10,8 +11,9 @@ public class Main extends JavaPlugin {
 	public static Main instance;
 	public static Main getInstance() {return instance;}
 	
+	public MySQL mysql;
+	
 	private BukkitRegister bukkitRegister = new BukkitRegister();
-	//Mysql
 	
 	@Override
 	public void onLoad() {
@@ -25,7 +27,8 @@ public class Main extends JavaPlugin {
 		bukkitRegister.registerListener();
 		bukkitRegister.registerCommands();
 		
-		// TODO MySql
+		// MySQL Still testing
+		mysql = new MySQL();
 	}
 	
 	@Override
@@ -45,12 +48,12 @@ public class Main extends JavaPlugin {
 		CustomConfig.get().addDefault("MySQL.username", "USERNAME");
 		CustomConfig.get().addDefault("MySQL.password", "PASSWORD");
 		
-		CustomConfig.get().addDefault("MySQL.Prefix", "§7[§eMineWM§7] §7");
-		CustomConfig.get().addDefault("MySQL.ProjektName", "MINECRAFT WM 2022");
-		CustomConfig.get().addDefault("MySQL.StartCountdown", Integer.valueOf(90));
-		CustomConfig.get().addDefault("MySQL.FirstHalf", Integer.valueOf(900));
-		CustomConfig.get().addDefault("MySQL.SecondHalf", Integer.valueOf(900));
-		CustomConfig.get().addDefault("MySQL.CombatLogTime", Integer.valueOf(30));
+		CustomConfig.get().addDefault("MineWM.Prefix", "§7[§eMineWM§7] §7");
+		CustomConfig.get().addDefault("MineWM.ProjektName", "MINECRAFT WM 2022");
+		CustomConfig.get().addDefault("MineWM.StartCountdown", Integer.valueOf(90));
+		CustomConfig.get().addDefault("MineWM.FirstHalf", Integer.valueOf(900));
+		CustomConfig.get().addDefault("MineWM.SecondHalf", Integer.valueOf(900));
+		CustomConfig.get().addDefault("MineWM.CombatLogTime", Integer.valueOf(30));
 		
 		CustomConfig.get().options().copyDefaults(true);
 		CustomConfig.save();

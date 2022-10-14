@@ -12,7 +12,8 @@ public class SyntaxBlocker implements Listener {
 	static String[] blockedEquals = {
 			"/rl",
 			"/reload",
-			"/me"
+			"/me",
+			"/tell"
 	};
 	
 	static String[] blockedStarts = {
