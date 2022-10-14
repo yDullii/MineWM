@@ -1,0 +1,8 @@
+name: MineWM
+version: 0.0.0.1 - DevTest
+main: de.dulli.minewm.Main
+author: yDulli
+commands:
+  gm:
+  invsee:
+  wm:
